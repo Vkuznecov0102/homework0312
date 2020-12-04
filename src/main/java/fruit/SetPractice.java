@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
 
-public class Main {
+public class SetPractice {
     public static void main(String[] args) {
         Fruit apple = new Fruit("Яблоко", 0.8);
         Fruit apricot = new Fruit("Абрикос", 0.3);
