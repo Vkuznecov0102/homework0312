@@ -1,7 +1,6 @@
 package fruit;
 
 import java.util.HashMap;
-import java.util.Iterator;
 import java.util.Map;
 
 public class IteratorPractice {
@@ -26,10 +25,8 @@ public class IteratorPractice {
         customer.put("Кривенков", melon);
 
         //6а
-        Iterator<Map.Entry<String, Fruit>> iterator = customer.entrySet().iterator();
 
-        while (iterator.hasNext()) {
-            Map.Entry<String, Fruit> pair = iterator.next();
+        for (Map.Entry<String, Fruit> pair : customer.entrySet()) {
             if (pair.getKey().length() > 5) {
                 System.out.println(pair.getKey() + ":" + pair.getValue());
             }
@@ -38,8 +35,7 @@ public class IteratorPractice {
         System.out.println("---------------");
 
         //6б
-        while (iterator.hasNext()) {
-            Map.Entry<String, Fruit> pair = iterator.next();
+        for (Map.Entry<String, Fruit> pair : customer.entrySet()) {
             if (pair.getValue().getName().equals("Дыня")) {
                 System.out.println(pair.getKey() + ":" + pair.getValue());
             }
@@ -48,8 +44,7 @@ public class IteratorPractice {
         System.out.println("---------------");
 
         //7а
-        while (iterator.hasNext()) {
-            Map.Entry<String, Fruit> pair = iterator.next();
+        for (Map.Entry<String, Fruit> pair : customer.entrySet()) {
             int count = 0;
             if (pair.getValue().getName().equals("Арбуз") && count < 2) {
                 count++;
@@ -62,8 +57,7 @@ public class IteratorPractice {
 
         //7б
         int count = 0;
-        while (iterator.hasNext()) {
-            Map.Entry<String, Fruit> pair = iterator.next();
+        for (Map.Entry<String, Fruit> pair : customer.entrySet()) {
             char letter = 'А';
             if (pair.getKey().charAt(0) == letter && count < 2) {
                 count++;
@@ -75,8 +69,7 @@ public class IteratorPractice {
         System.out.println("---------------");
 
         //8
-        while (iterator.hasNext()) {
-            Map.Entry<String, Fruit> pair = iterator.next();
+        for (Map.Entry<String, Fruit> pair : customer.entrySet()) {
             if (pair.getValue().getName().equalsIgnoreCase("АРбУз")) {
                 System.out.println(pair.getKey() + ":" + pair.getValue());
             }
@@ -85,9 +78,9 @@ public class IteratorPractice {
         System.out.println("---------------");
 
         //9
+        count = 0;
         Map<Integer, Fruit> otherMap = new HashMap<>();
-        while (iterator.hasNext()) {
-            Map.Entry<String, Fruit> pair = iterator.next();
+        for (Map.Entry<String, Fruit> pair : customer.entrySet()) {
             otherMap.put(count + 1, pair.getValue());
             count++;
         }
