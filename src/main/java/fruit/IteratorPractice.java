@@ -6,6 +6,7 @@ import java.util.Map;
 public class IteratorPractice {
     public static void main(String[] args) {
         Map<String, Fruit> customer = new HashMap<>();
+        char letter = 'А';
         Fruit apple = new Fruit("Яблоко", 0.8);
         Fruit apricot = new Fruit("Абрикос", 0.3);
         Fruit fig = new Fruit("Инжир", 0.05);
@@ -58,7 +59,6 @@ public class IteratorPractice {
         //7б
         int count = 0;
         for (Map.Entry<String, Fruit> pair : customer.entrySet()) {
-            char letter = 'А';
             if (pair.getKey().charAt(0) == letter && count < 2) {
                 count++;
             } else {
@@ -94,7 +94,7 @@ public class IteratorPractice {
         double sumWeight = 0;
         double average;
         for (Map.Entry<String, Fruit> pair : customer.entrySet()) {
-            sumWeight = sumWeight + pair.getValue().getWeight();
+            sumWeight += pair.getValue().getWeight();
         }
         average = sumWeight / customer.size();
         System.out.println("Средний вес фруктов " + average + " килограмм");
